@@ -1,9 +1,12 @@
+import Banner from '@/components/homepage/Banner';
+import Marquee from '@/components/homepage/Marquee';
 import React from 'react';
 
 const HomePage = () => {
     return (
         <div>
-            HomePage
+            <Banner/>
+            <Marquee/>
         </div>
     );
 };
