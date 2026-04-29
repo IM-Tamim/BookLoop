@@ -28,7 +28,7 @@ const Banner = () => {
                         <p className="text-white/80 max-w-md drop-shadow-md">
                             Borrow books from tech, science, and fiction — all in one place.
                         </p>
-                        <Link href="/books" className="btn btn-primary rounded-full w-fit px-6">
+                        <Link href="/all-books" className="btn btn-primary rounded-full w-fit px-6">
                             Browse Now →
                         </Link>
                         <div className="flex gap-8 mt-4 pt-4 border-t border-white/20 w-fit">
