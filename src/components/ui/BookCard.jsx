@@ -25,7 +25,7 @@ const BookCard = ({ book }) => {
                     </span>
                 </p>
                 <div className="card-actions mt-2">
-                    <Link href={`/books/${id}`} className="btn btn-primary btn-sm w-full">
+                    <Link href={`/all-books/${id}`} className="btn btn-primary btn-sm w-full">
                         Details
                     </Link>
                 </div>
