@@ -1,7 +1,7 @@
-import Image from "next/image";
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <h2 className="text-center text-red-400">App Home Page</h2>
-  );
+export default function AppPage() {
+  redirect('/home');
+
+  return <div>Redirecting...</div>;
 }
