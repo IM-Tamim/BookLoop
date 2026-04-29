@@ -1,8 +1,9 @@
-import { getBooks } from "@/lib/books";
+import { getAllBooks } from "@/lib/books";
 import { FaBookOpen, FaGift, FaStar, FaRocket } from "react-icons/fa";
+import Marquee from "react-fast-marquee";
 
-const Marquee= async()=> {
-    const books = await getBooks();
+const MarqueeBar= async()=> {
+    const books = await getAllBooks();
 
     const bookItems = books.slice(0, 5).map((book, index) => (
         <span key={`book-${book.id}`} className="inline-flex items-center gap-2">
@@ -34,14 +35,14 @@ const Marquee= async()=> {
 
     return (
         <div className="bg-[#e2c97e] text-[#0B1120] py-2">
-            <marquee  behavior="alternate">
+            <Marquee pauseOnHover={true}>
                 {items.map((item, i) => (
                     <span key={i} className="mx-8">
                         {item} ·
                     </span>
                 ))}
-            </marquee>
+            </Marquee>
         </div>
     );
 }
-export default Marquee;
+export default MarqueeBar;

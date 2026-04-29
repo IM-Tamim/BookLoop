@@ -1,17 +1,17 @@
-import { getBooks } from "@/lib/books";
+import { getAllBooks } from "@/lib/books";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 const Featured = async () => {
-    const books = await getBooks();
+    const books = await getAllBooks();
     const featured = books.sort((a, b) => b.popularity - a.popularity).slice(0, 4);
 
     return (
         <section className="container mx-auto px-4 py-12">
             <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold">Featured Books</h2>
-                <p className="text-base-content/60 mt-2">Hand-picked titles just for you</p>
+                <p className="text-base-content/60 mt-2">These are the famous & hand-picked books just for you</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

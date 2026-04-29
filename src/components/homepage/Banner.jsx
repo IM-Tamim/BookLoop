@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroBg from "@/assets/hero-bg.jpg"
-import { getBooks } from "@/lib/books";
+import { getAllBooks } from "@/lib/books";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 const Banner = async () => {
-    const books = await getBooks();
+    const books = await getAllBooks();
     const totalBooks = books.length;
     const categories = new Set(books.map((b) => b.category)).size;
     const stats = [
