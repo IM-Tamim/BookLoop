@@ -52,7 +52,7 @@ const Footer = () => {
         {/* Contact */}
         <div className="space-y-4 flex flex-col items-center sm:items-start">
           <h3 className="text-sm font-semibold tracking-widest uppercase text-white/90">
-            Contact
+            Contact Us
           </h3>
 
           <p className="flex items-center gap-2 text-sm text-white/70 justify-center sm:justify-start">

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { SiGoogle } from "react-icons/si";
 
+
 const SignUpPage = () => {
     const router = useRouter();
 
@@ -18,13 +19,14 @@ const SignUpPage = () => {
             email: userData.email,
             password: userData.password,
             name: userData.name,
-            image: userData.photo, // 👈 photo-url added
-            callbackURL: "/signin", // 👈 go to login page after success
+            image: userData.photo,
+            callbackURL: "/signin",
         });
 
         if (error) {
             toast.error(error.message);
         } else {
+            await authClient.signOut();
             toast.success("Registration Successful!");
             router.push("/signin");
         }
@@ -123,7 +125,7 @@ const SignUpPage = () => {
                         onClick={handleGoogleLogin}
                         className="btn btn-primary btn-outline w-full flex items-center justify-center gap-2"
                     >
-                        <SiGoogle/>
+                        <SiGoogle />
                         Continue with Google
                     </button>
 
