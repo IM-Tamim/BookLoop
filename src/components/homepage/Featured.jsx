@@ -1,6 +1,7 @@
 import { getBooks } from "@/lib/books";
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 const Featured = async () => {
     const books = await getBooks();
@@ -40,8 +41,8 @@ const Featured = async () => {
             </div>
 
             <div className="text-center mt-10">
-                <Link href="/all-books" className="btn btn-outline btn-primary">
-                    Browse All Books
+                <Link href="/all-books" className="btn btn-outline btn-primary ">
+                    <span className="flex items-center justify-center gap-2">Browse All Books <FaArrowRightFromBracket /></span>
                 </Link>
             </div>
         </section>
