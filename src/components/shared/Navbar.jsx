@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import NavLink from "./NavLink";
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link href={'/'} className="btn btn-ghost text-xl text-primary font-bold">BookLoop</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

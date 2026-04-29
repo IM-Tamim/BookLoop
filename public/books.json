@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "Set in the Jazz Age on Long Island, this novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession with the beautiful former debutante Daisy Buchanan. A timeless story of wealth, class, love, and the American Dream.",
+    "category": "Story",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/id/8432472-L.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship. Packed with real-world examples and case studies, this book teaches you how to write clean, maintainable, and efficient code. A must-read for every professional developer who wants to improve the quality of their software.",
+    "category": "Tech",
+    "available_quantity": 8,
+    "image_url": "https://covers.openlibrary.org/b/id/8775117-L.jpg"
+  },
+  {
+    "id": 3,
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "From the Big Bang to black holes, Stephen Hawking takes the reader on a journey through the cosmos. Covering the nature of time, the expanding universe, and quantum mechanics, this book explains some of the most complex scientific ideas in an accessible and engaging way.",
+    "category": "Science",
+    "available_quantity": 6,
+    "image_url": "https://covers.openlibrary.org/b/id/8739161-L.jpg"
+  },
+  {
+    "id": 4,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "Through the eyes of young Scout Finch, this Pulitzer Prize-winning masterpiece explores racial injustice and moral growth in the American South during the 1930s. Her father, lawyer Atticus Finch, defends a Black man wrongly accused of a terrible crime.",
+    "category": "Story",
+    "available_quantity": 4,
+    "image_url": "https://covers.openlibrary.org/b/id/8810278-L.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt & David Thomas",
+    "description": "From journeyman to master — this book examines the core process of software development and distills the best practices and major pitfalls of software development. Filled with practical advice, it will help you become a better, more productive programmer.",
+    "category": "Tech",
+    "available_quantity": 7,
+    "image_url": "https://covers.openlibrary.org/b/id/8261363-L.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "description": "In this eloquent and thought-provoking book, Carl Sagan explores the history and meaning of scientific discovery, from ancient civilizations to the Space Age. He covers the origin of life, the nature of the universe, and humanity's place among the stars.",
+    "category": "Science",
+    "available_quantity": 3,
+    "image_url": "https://covers.openlibrary.org/b/id/240726-L.jpg"
+  },
+  {
+    "id": 7,
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "A dystopian social science fiction novel set in a totalitarian society ruled by Big Brother. Winston Smith, a low-ranking member of the ruling Party, begins a doomed love affair and searches for truth and freedom in a world where surveillance is absolute and individuality is a crime.",
+    "category": "Story",
+    "available_quantity": 9,
+    "image_url": "https://covers.openlibrary.org/b/id/9279645-L.jpg"
+  },
+  {
+    "id": 8,
+    "title": "You Don't Know JS",
+    "author": "Kyle Simpson",
+    "description": "A deep dive series into the core mechanisms of the JavaScript language. This book covers types and grammar, scope and closures, this and object prototypes, and ES6 features. An essential read for anyone who wants to truly understand JavaScript from the ground up.",
+    "category": "Tech",
+    "available_quantity": 10,
+    "image_url": "https://covers.openlibrary.org/b/id/7984916-L.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "description": "Richard Dawkins' brilliant reformulation of the theory of natural selection has the rare distinction of having provoked as much excitement and interest outside the scientific community as within it. This is a book about the gene as the central unit of evolution.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/id/6497539-L.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different from what he ever imagined — a journey about listening to our hearts and following our dreams.",
+    "category": "Story",
+    "available_quantity": 12,
+    "image_url": "https://covers.openlibrary.org/b/id/8429977-L.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen",
+    "description": "Known as CLRS, this textbook is the definitive reference for algorithms and data structures. It covers sorting, searching, graph algorithms, dynamic programming, and more with rigorous mathematical analysis. Used in universities worldwide and essential for every serious programmer.",
+    "category": "Tech",
+    "available_quantity": 4,
+    "image_url": "https://covers.openlibrary.org/b/id/8160836-L.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Origin of Species",
+    "author": "Charles Darwin",
+    "description": "One of the most important and influential works in the history of science, Darwin's theory of evolution by natural selection forever changed our understanding of life on Earth. This foundational text presents meticulous observations and compelling arguments that shaped modern biology.",
+    "category": "Science",
+    "available_quantity": 2,
+    "image_url": "https://covers.openlibrary.org/b/id/8739735-L.jpg"
+  }
+]
