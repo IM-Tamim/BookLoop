@@ -1,4 +1,4 @@
-const JsonServer = "http://localhost:5000";
+const JsonServer = "https://json-server-x5jc.onrender.com";
 
 export const getCategories = async () => {
   const res = await fetch(`${JsonServer}/categories`);
