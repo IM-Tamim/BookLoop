@@ -42,13 +42,15 @@ const Navbar = () => {
                     ) : user ? (
                         <div className="flex items-center gap-3">
                             <span className="text-sm font-medium">{user?.name || "User"}</span>
-                            <Image
-                                src={user?.image || userAvatar}
-                                alt="User Avatar"
-                                width={36}
-                                height={36}
-                                className="rounded-full"
-                            />
+                            <div className="w-9 h-9 rounded-full overflow-hidden">
+                                <Image
+                                    src={user?.image || userAvatar}
+                                    alt="User Avatar"
+                                    width={36}
+                                    height={36}
+                                    className="object-cover"
+                                />
+                            </div>
                             <button
                                 className="btn"
                                 onClick={async () => await authClient.signOut()}
