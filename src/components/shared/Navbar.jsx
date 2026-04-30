@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink href="/home">Home</NavLink></li>
-        <li><NavLink href="/all-books">All Books</NavLink></li>
+        <li><NavLink href="/all-books" matchPaths={["/category"]}>All Books</NavLink></li>
         <li><NavLink href="/profile">Profile</NavLink></li>
     </>
 
