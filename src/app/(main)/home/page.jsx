@@ -1,8 +1,8 @@
 import Banner from '@/components/homepage/Banner';
 import Featured from '@/components/homepage/Featured';
+import HowItWorks from '@/components/homepage/HowItWorks';
 import MarqueeBar from '@/components/homepage/MarqueeBar';
 import WhyChooseUs from '@/components/homepage/WhyChooseUs';
-import React from 'react';
 
 const HomePage = () => {
     return (
@@ -11,6 +11,7 @@ const HomePage = () => {
             <MarqueeBar/>
             <Featured/>
             <WhyChooseUs/>
+            <HowItWorks/>
         </div>
     );
 };

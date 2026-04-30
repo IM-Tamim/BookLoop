@@ -1,12 +1,14 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { SiGoogle } from "react-icons/si";
 import { toast } from "react-toastify";
 
 const SignInPage = () => {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get("callbackUrl") || "/home";
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -16,20 +18,20 @@ const SignInPage = () => {
         const { data, error } = await authClient.signIn.email({
             email: userData.email,
             password: userData.password,
-            callbackURL: "/home",
         });
 
         if (error) {
             toast.error(error.message);
         } else {
-            router.push("/home");
             toast.success("Login Successful!");
+            router.push(callbackUrl);
         }
     };
+
     const handleGoogleLogin = async () => {
         const { error } = await authClient.signIn.social({
             provider: "google",
-            callbackURL: "/home",
+            callbackURL: callbackUrl,
         });
 
         if (error) {
@@ -73,7 +75,6 @@ const SignInPage = () => {
                         />
                     </div>
 
-                    {/* Buttons */}
                     <div className="flex gap-2 mt-2">
                         <button className="btn btn-primary btn-outline w-1/2" type="submit">
                             Login

@@ -1,20 +1,21 @@
-import { NextResponse } from 'next/server'
-import { auth } from './lib/auth';
-import { headers } from 'next/headers';
+import { NextResponse } from "next/server";
+import { auth } from "./lib/auth";
 
-export async function proxy(request) {
-
+export const proxy = async (request) => {
     const session = await auth.api.getSession({
-        headers: await headers()
-    })
+        headers: request.headers
+    });
 
     if (session) {
         return NextResponse.next();
-    } else {
-        return NextResponse.redirect(new URL('/signin', request.url))
     }
+
+    const loginUrl = new URL("/signin", request.url);
+    loginUrl.searchParams.set("callbackUrl", request.nextUrl.pathname);
+
+    return NextResponse.redirect(loginUrl);
 }
 
 export const config = {
-    matcher: ['/profile', '/profile/:path*', '/all-books/:id'],
-}
+    matcher: ["/profile/:path*", "/all-books/:id"],
+};
