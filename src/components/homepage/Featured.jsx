@@ -31,7 +31,7 @@ const Featured = async () => {
                             <h2 className="card-title text-base line-clamp-1">{book.title}</h2>
                             <p className="text-sm opacity-60">by {book.author}</p>
                             <div className="card-actions mt-2">
-                                <Link href={`/books/${book.id}`} className="btn btn-primary btn-sm w-full">
+                                <Link href={`/all-books/${book.id}`} className="btn btn-primary btn-sm w-full">
                                     View Details
                                 </Link>
                             </div>
