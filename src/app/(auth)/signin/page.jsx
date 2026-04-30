@@ -4,8 +4,9 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SiGoogle } from "react-icons/si";
 import { toast } from "react-toastify";
+import { Suspense } from "react";
 
-const SignInPage = () => {
+const SignInForm = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl") || "/home";
@@ -104,6 +105,18 @@ const SignInPage = () => {
                 </form>
             </div>
         </div>
+    );
+};
+
+const SignInPage = () => {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-base-200">
+                <span className="loading loading-spinner text-primary"></span>
+            </div>
+        }>
+            <SignInForm />
+        </Suspense>
     );
 };
 
