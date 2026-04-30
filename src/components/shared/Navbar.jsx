@@ -29,7 +29,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link href={'/'} className="btn btn-ghost text-xl text-primary font-bold">BookLoop</Link>
+                    <Link href={'/home'} className="btn btn-ghost text-xl text-primary font-bold hidden lg:block">BookLoop</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

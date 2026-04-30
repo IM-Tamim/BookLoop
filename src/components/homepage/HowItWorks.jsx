@@ -41,31 +41,50 @@ const HowItWorks = () => {
                     </p>
                 </div>
 
-                <div className="relative flex flex-col items-center">
+                <div className="flex flex-col items-center gap-0 lg:hidden">
+                    {steps.map((item, index) => (
+                        <div key={item.step} className="flex flex-col items-center animate__animated animate__fadeIn"
+                            style={{ animationDelay: `${index * 0.4}s`, animationFillMode: 'both' }}>
+                            <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-xl text-primary-content shadow-md animate__animated animate__bounceIn"
+                                style={{ animationDelay: `${index * 0.4}s`, animationFillMode: 'both' }}>
+                                {item.icon}
+                            </div>
+                            <div className="text-center px-4 py-3">
+                                <span className="text-xs font-bold text-primary tracking-widest">STEP {item.step}</span>
+                                <h3 className="font-bold text-base mt-0.5 text-base-content">{item.title}</h3>
+                                <p className="text-sm text-base-content/60 mt-1">{item.description}</p>
+                            </div>
+                            {index < steps.length - 1 && (
+                                <div className="w-0.5 h-6 bg-primary/30" />
+                            )}
+                        </div>
+                    ))}
+                </div>
 
+                <div className="relative hidden lg:flex flex-col items-center">
                     <div className="absolute left-1/2 -translate-x-1/2 top-7 bottom-7 w-0.5 bg-primary/30 z-0" />
 
                     {steps.map((item, index) => (
                         <div
                             key={item.step}
-                            className={`
-                                relative flex items-center justify-center w-full mb-16 last:mb-0
-                                animate__animated animate__fadeIn
-                            `}
+                            className="relative flex items-center justify-center w-full mb-16 last:mb-0 animate__animated animate__fadeIn"
                             style={{ animationDelay: `${index * 0.4}s`, animationFillMode: 'both' }}
                         >
-                            <div className={`
-                                absolute w-[220px] 
-                                ${index % 2 === 0 ? 'right-[calc(50%+44px)] text-right' : 'left-[calc(50%+44px)] text-left'}
-                                animate__animated
-                                ${index % 2 === 0 ? 'animate__fadeInLeft' : 'animate__fadeInRight'}
-                            `}
-                                style={{ animationDelay: `${index * 0.4 + 0.2}s`, animationFillMode: 'both' }}
-                            >
-                                <span className="text-xs font-bold text-primary tracking-widest">STEP {item.step}</span>
-                                <h3 className="font-bold text-base mt-0.5 text-base-content">{item.title}</h3>
-                                <p className="text-sm text-base-content/60 mt-1">{item.description}</p>
-                            </div>
+                            {index % 2 === 0 ? (
+                                <div className="absolute right-[calc(50%+44px)] w-52 text-right animate__animated animate__fadeInLeft"
+                                    style={{ animationDelay: `${index * 0.4 + 0.2}s`, animationFillMode: 'both' }}>
+                                    <span className="text-xs font-bold text-primary tracking-widest">STEP {item.step}</span>
+                                    <h3 className="font-bold text-base mt-0.5 text-base-content">{item.title}</h3>
+                                    <p className="text-sm text-base-content/60 mt-1">{item.description}</p>
+                                </div>
+                            ) : (
+                                <div className="absolute left-[calc(50%+44px)] w-52 text-left animate__animated animate__fadeInRight"
+                                    style={{ animationDelay: `${index * 0.4 + 0.2}s`, animationFillMode: 'both' }}>
+                                    <span className="text-xs font-bold text-primary tracking-widest">STEP {item.step}</span>
+                                    <h3 className="font-bold text-base mt-0.5 text-base-content">{item.title}</h3>
+                                    <p className="text-sm text-base-content/60 mt-1">{item.description}</p>
+                                </div>
+                            )}
 
                             <div
                                 className="relative z-10 w-14 h-14 rounded-full bg-primary flex items-center justify-center text-xl text-primary-content shadow-md animate__animated animate__bounceIn"
@@ -73,11 +92,10 @@ const HowItWorks = () => {
                             >
                                 {item.icon}
                             </div>
-
                         </div>
                     ))}
-
                 </div>
+
             </div>
         </section>
     );
