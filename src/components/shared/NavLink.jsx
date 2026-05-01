@@ -12,7 +12,8 @@ const NavLink = ({ href, children, matchPaths = [] }) => {
   return (
     <Link
       href={href}
-      className={isActive ? "text-primary border-b-2 font-semibold" : "text-base-90"}
+      className={isActive ? "font-semibold border-b-2" : ""}
+      style={isActive ? { color: "#4f8ef7", borderColor: "#4f8ef7" } : { color: "#94a3b8" }}
     >
       {children}
     </Link>

@@ -9,39 +9,57 @@ const ProfilePage = () => {
     const user = userData.data?.user;
 
     return (
-        <div className="min-h-screen bg-slate-50">
-            <div className="max-w-md mx-auto py-16 px-4">
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 flex flex-col items-center gap-5">
+        <div
+            className="min-h-screen flex items-center justify-center px-4"
+            style={{ background: "linear-gradient(135deg, #0a0f1e 0%, #0d1b3e 50%, #0a1628 100%)" }}
+        >
+            <div className="w-full max-w-md">
 
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-slate-200">
+                <div
+                    className="rounded-2xl p-8 border flex flex-col items-center gap-5"
+                    style={{
+                        background: "rgba(255,255,255,0.03)",
+                        borderColor: "rgba(79,142,247,0.15)",
+                        boxShadow: "0 0 40px rgba(79,142,247,0.07), 0 20px 60px rgba(0,0,0,0.4)"
+                    }}
+                >
+                    <div
+                        className="relative w-24 h-24 rounded-full overflow-hidden"
+                        style={{ border: "2px solid rgba(79,142,247,0.4)" }}
+                    >
                         <Image
-                            src={user?.image || userAvatar}
+                            src={user?.image && user.image.startsWith("http") ? user.image : userAvatar}
                             alt="User Image"
                             referrerPolicy="no-referrer"
                             fill
                             className="object-cover"
+                            onError={(e) => { e.target.src = userAvatar.src; }}
                         />
                     </div>
 
                     <div className="text-center">
-                        <h1 className="text-xl font-bold text-slate-800">{user?.name}</h1>
-                        <p className="text-sm text-slate-500 mt-1">{user?.email}</p>
+                        <h1 className="text-xl font-bold" style={{ color: "#e2e8f0" }}>{user?.name}</h1>
+                        <p className="text-sm mt-1" style={{ color: "#4a6080" }}>{user?.email}</p>
                     </div>
 
-                    <div className="w-full border-t border-slate-100 pt-5 flex flex-col gap-3 text-sm text-slate-600">
+                    <div
+                        className="w-full pt-5 flex flex-col gap-3 text-sm"
+                        style={{ borderTop: "1px solid rgba(79,142,247,0.1)" }}
+                    >
                         <div className="flex justify-between">
-                            <span className="text-slate-400">Name</span>
-                            <span className="font-medium text-slate-700">{user?.name}</span>
+                            <span style={{ color: "#4a6080" }}>Name</span>
+                            <span className="font-medium" style={{ color: "#94a3b8" }}>{user?.name}</span>
                         </div>
                         <div className="flex justify-between">
-                            <span className="text-slate-400">Email</span>
-                            <span className="font-medium text-slate-700">{user?.email}</span>
+                            <span style={{ color: "#4a6080" }}>Email</span>
+                            <span className="font-medium" style={{ color: "#94a3b8" }}>{user?.email}</span>
                         </div>
                     </div>
 
                     <Link
                         href="/profile/update"
-                        className="w-full text-center bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+                        className="w-full text-center text-sm font-bold px-6 py-3 rounded-xl transition-all hover:opacity-90 active:scale-95"
+                        style={{ background: "linear-gradient(135deg, #2563eb, #4f8ef7)", color: "#fff" }}
                     >
                         Update Profile
                     </Link>

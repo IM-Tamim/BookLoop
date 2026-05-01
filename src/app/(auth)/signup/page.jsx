@@ -4,14 +4,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { SiGoogle } from "react-icons/si";
-
+import { FiUser, FiMail, FiLock, FiImage, FiArrowRight } from "react-icons/fi";
 
 const SignUpPage = () => {
     const router = useRouter();
 
     const onSubmit = async (e) => {
         e.preventDefault();
-
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
 
@@ -43,100 +42,106 @@ const SignUpPage = () => {
         }
     };
 
+    const inputClass = "w-full pl-11 pr-4 py-3 rounded-xl text-sm outline-none transition-all";
+    const inputStyle = { background: "rgba(255,255,255,0.05)", border: "1px solid rgba(79,142,247,0.2)", color: "#e2e8f0" };
+    const onFocus = (e) => (e.target.style.borderColor = "rgba(79,142,247,0.6)");
+    const onBlur = (e) => (e.target.style.borderColor = "rgba(79,142,247,0.2)");
+
     return (
-        <div className="min-h-screen flex items-center justify-center bg-base-200">
-            <div className="card w-96 bg-base-100 shadow-xl p-6">
+        <div
+            className="min-h-screen flex items-center justify-center px-4 py-10"
+            style={{ background: "linear-gradient(135deg, #0a0f1e 0%, #0d1b3e 50%, #0a1628 100%)" }}
+        >
+            <div className="w-full max-w-md">
 
-                <h2 className="text-2xl font-bold text-center mb-4">
-                    Create Account
-                </h2>
+                <div className="text-center mb-8">
+                    <h1 className="text-4xl font-black tracking-tight text-primary">
+                        Book<span className="text-yellow-500">Loop</span>
+                    </h1>
+                    <p className="text-sm mt-1" style={{ color: "#4a6080" }}>Create your account</p>
+                </div>
 
-                <form onSubmit={onSubmit} className="flex flex-col gap-4">
+                <div
+                    className="rounded-2xl p-8 border"
+                    style={{
+                        background: "rgba(255,255,255,0.03)",
+                        borderColor: "rgba(79,142,247,0.15)",
+                        boxShadow: "0 0 40px rgba(79,142,247,0.07), 0 20px 60px rgba(0,0,0,0.4)",
+                    }}
+                >
+                    <form onSubmit={onSubmit} className="flex flex-col gap-5">
 
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Name</span>
-                        </label>
-                        <input
-                            name="name"
-                            type="text"
-                            placeholder="Your Name"
-                            className="input input-bordered w-full"
-                            required
-                            minLength={3}
-                        />
-                    </div>
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6080" }}>Name</label>
+                            <div className="relative">
+                                <FiUser className="absolute left-4 top-1/2 -translate-y-1/2" size={15} style={{ color: "#4f8ef7" }} />
+                                <input name="name" type="text" placeholder="Your Name" className={inputClass} style={inputStyle} onFocus={onFocus} onBlur={onBlur} required minLength={3} />
+                            </div>
+                        </div>
 
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input
-                            name="email"
-                            type="email"
-                            placeholder="name@gmail.com"
-                            className="input input-bordered w-full"
-                            required
-                        />
-                    </div>
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6080" }}>Email</label>
+                            <div className="relative">
+                                <FiMail className="absolute left-4 top-1/2 -translate-y-1/2" size={15} style={{ color: "#4f8ef7" }} />
+                                <input name="email" type="email" placeholder="name@gmail.com" className={inputClass} style={inputStyle} onFocus={onFocus} onBlur={onBlur} required />
+                            </div>
+                        </div>
 
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Photo URL</span>
-                        </label>
-                        <input
-                            name="photo"
-                            type="url"
-                            placeholder="Your photo URL"
-                            className="input input-bordered w-full"
-                        />
-                    </div>
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6080" }}>Photo URL</label>
+                            <div className="relative">
+                                <FiImage className="absolute left-4 top-1/2 -translate-y-1/2" size={15} style={{ color: "#4f8ef7" }} />
+                                <input name="photo" type="url" placeholder="https://example.com/photo.jpg" className={inputClass} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                            </div>
+                        </div>
 
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input
-                            name="password"
-                            type="password"
-                            placeholder="Enter password"
-                            className="input input-bordered w-full"
-                            required
-                            minLength={8}
-                        />
-                        <p className="text-xs mt-1 opacity-70">
-                            At least 8 characters
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6080" }}>Password</label>
+                            <div className="relative">
+                                <FiLock className="absolute left-4 top-1/2 -translate-y-1/2" size={15} style={{ color: "#4f8ef7" }} />
+                                <input name="password" type="password" placeholder="••••••••" className={inputClass} style={inputStyle} onFocus={onFocus} onBlur={onBlur} required minLength={8} />
+                            </div>
+                            <p className="text-xs" style={{ color: "#4a6080" }}>At least 8 characters</p>
+                        </div>
+
+                        <div className="flex gap-3 mt-1">
+                            <button
+                                type="submit"
+                                className="btn btn-accent btn-outline flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all hover:opacity-90 active:scale-95"
+                            >
+                                Register <FiArrowRight size={15} />
+                            </button>
+                            <button
+                                type="reset"
+                                className="btn btn-error btn-outline px-5 py-3 rounded-xl text-sm font-medium transition-all hover:opacity-80"
+
+                            >
+                                Reset
+                            </button>
+                        </div>
+
+                        <div className="flex items-center gap-3 my-1">
+                            <div className="flex-1 h-px" style={{ background: "rgba(79,142,247,0.15)" }} />
+                            <span className="text-xs" style={{ color: "#4a6080" }}>OR</span>
+                            <div className="flex-1 h-px" style={{ background: "rgba(79,142,247,0.15)" }} />
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={handleGoogleLogin}
+                            className="btn btn-info btn-soft w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all hover:opacity-80"
+                        >
+                            <SiGoogle size={15} />
+                            Continue with Google
+                        </button>
+
+                        <p className="text-center text-sm" style={{ color: "#4a6080" }}>
+                            Already have an account?{" "}
+                            <Link href="/signin" className="font-semibold text-secondary hover:text-info">Login</Link>
                         </p>
-                    </div>
 
-                    <div className="flex gap-2 mt-2">
-                        <button className="btn btn-primary btn-outline w-1/2" type="submit">
-                            Register
-                        </button>
-                        <button className="btn btn-outline w-1/2" type="reset">
-                            Reset
-                        </button>
-                    </div>
-
-                    <div className="divider">OR</div>
-
-                    <button
-                        type="button"
-                        onClick={handleGoogleLogin}
-                        className="btn btn-primary btn-outline w-full flex items-center justify-center gap-2"
-                    >
-                        <SiGoogle />
-                        Continue with Google
-                    </button>
-
-                    <p className="text-center text-sm mt-2">
-                        Already have an account?{" "}
-                        <Link href="/signin" className="link link-primary font-semibold">
-                            Sign In
-                        </Link>
-                    </p>
-
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     );
