@@ -115,14 +115,12 @@ const SignInForm = () => {
                             <button
                                 type="submit"
                                 className="btn btn-accent btn-outline flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all hover:opacity-90 active:scale-95"
-                                
                             >
                                 Sign In <FiArrowRight size={15} />
                             </button>
                             <button
                                 type="reset"
                                 className="btn btn-error btn-outline px-5 py-3 rounded-xl text-sm font-medium transition-all hover:opacity-80"
-                                
                             >
                                 Reset
                             </button>
@@ -145,6 +143,7 @@ const SignInForm = () => {
 
                         <p className="text-center text-sm" style={{ color: "#4a6080" }}>
                             Do not have an account?{" "}
+                            {/* No callbackUrl forwarded to signup — after registration + login they go to /home */}
                             <Link href="/signup" className="text-secondary font-semibold hover:text-info">
                                 Register
                             </Link>

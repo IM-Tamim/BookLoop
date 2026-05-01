@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { SiGoogle } from "react-icons/si";
 import { FiUser, FiMail, FiLock, FiImage, FiArrowRight } from "react-icons/fi";
+import { Suspense } from "react";
 
-const SignUpPage = () => {
+const SignUpForm = () => {
     const router = useRouter();
 
     const onSubmit = async (e) => {
@@ -114,7 +115,6 @@ const SignUpPage = () => {
                             <button
                                 type="reset"
                                 className="btn btn-error btn-outline px-5 py-3 rounded-xl text-sm font-medium transition-all hover:opacity-80"
-
                             >
                                 Reset
                             </button>
@@ -137,6 +137,7 @@ const SignUpPage = () => {
 
                         <p className="text-center text-sm" style={{ color: "#4a6080" }}>
                             Already have an account?{" "}
+                            {/* No callbackUrl forwarded — after login they go to /home */}
                             <Link href="/signin" className="font-semibold text-secondary hover:text-info">Login</Link>
                         </p>
 
@@ -144,6 +145,18 @@ const SignUpPage = () => {
                 </div>
             </div>
         </div>
+    );
+};
+
+const SignUpPage = () => {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center" style={{ background: "#0a0f1e" }}>
+                <span className="loading loading-spinner text-primary"></span>
+            </div>
+        }>
+            <SignUpForm />
+        </Suspense>
     );
 };
 
