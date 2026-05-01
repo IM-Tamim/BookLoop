@@ -1,7 +1,7 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { SiGoogle } from "react-icons/si";
 import { toast } from "react-toastify";
 import { Suspense } from "react";
@@ -9,8 +9,6 @@ import { FiMail, FiLock, FiArrowRight } from "react-icons/fi";
 
 const SignInForm = () => {
     const router = useRouter();
-    const searchParams = useSearchParams();
-    const callbackUrl = searchParams.get("callbackUrl") || "/home";
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -26,14 +24,14 @@ const SignInForm = () => {
             toast.error(error.message);
         } else {
             toast.success("Login Successful!");
-            router.push(callbackUrl);
+            router.push("/home");
         }
     };
 
     const handleGoogleLogin = async () => {
         const { error } = await authClient.signIn.social({
             provider: "google",
-            callbackURL: callbackUrl,
+            callbackURL: "/home",
         });
 
         if (error) {
@@ -143,7 +141,6 @@ const SignInForm = () => {
 
                         <p className="text-center text-sm" style={{ color: "#4a6080" }}>
                             Do not have an account?{" "}
-                            {/* No callbackUrl forwarded to signup — after registration + login they go to /home */}
                             <Link href="/signup" className="text-secondary font-semibold hover:text-info">
                                 Register
                             </Link>

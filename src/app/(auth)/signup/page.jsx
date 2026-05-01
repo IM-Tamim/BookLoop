@@ -28,6 +28,8 @@ const SignUpForm = () => {
         } else {
             await authClient.signOut();
             toast.success("Registration Successful!");
+            // After registration, always go to /signin with no callbackUrl
+            // so after login they land on /home
             router.push("/signin");
         }
     };
