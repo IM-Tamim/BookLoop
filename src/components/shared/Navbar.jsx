@@ -60,8 +60,10 @@ const Navbar = () => {
                         <span className="loading loading-spinner text-secondary"></span>
                     ) : user ? (
                         <div className="flex items-center gap-3">
-                            <span className="text-sm font-medium" style={{ color: "#94a3b8" }}>{user?.name || "User"}</span>
-                            <div className="w-9 h-9 rounded-full overflow-hidden" style={{ border: "2px solid rgba(79,142,247,0.4)" }}>
+                            <span className="text-sm font-medium truncate max-w-20" style={{ color: "#94a3b8" }}>
+                                {user?.name || "User"}
+                            </span>
+                            <div className="w-9 h-9 rounded-full overflow-hidden shrink-0" style={{ border: "2px solid rgba(79,142,247,0.4)" }}>
                                 <Image
                                     src={user?.image && user.image.startsWith("http") ? user.image : userAvatar}
                                     alt="User Avatar"
